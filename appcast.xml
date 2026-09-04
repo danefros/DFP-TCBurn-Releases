@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>DFP TC Burn</title>
+        <item>
+            <title>2.3</title>
+            <pubDate>Fri, 04 Sep 2026 10:33:32 -0700</pubDate>
+            <link>https://github.com/danefros/DFP-TCBurn-Releases</link>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>2.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<style>
+.tcburn-whatsnew { font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  color: #1A1A1A; margin: 0; padding: 4px 2px 12px; }
+.tcburn-whatsnew h1 { font-size: 15px; margin: 0 0 2px; color: #1F4E79; }
+.tcburn-whatsnew .version { font-size: 11px; color: #6B6B6B; margin: 0 0 14px; }
+.tcburn-whatsnew h2 { font-size: 13px; margin: 18px 0 6px; color: #1A1A1A;
+  border-bottom: 1px solid #DCDCDC; padding-bottom: 3px; }
+.tcburn-whatsnew p { margin: 0 0 10px; }
+.tcburn-whatsnew ul { margin: 0 0 10px; padding-left: 20px; }
+.tcburn-whatsnew li { margin: 0 0 7px; }
+</style>
+<div class="tcburn-whatsnew">
+<h1>TC Burn updates itself.</h1>
+<p class="version">DFP TC Burn 2.3</p>
+<h2>The app checks for its own updates</h2>
+<p>Until now a new build meant being sent a disk image, which meant the version actually in use was whichever one you last got round to installing. TC Burn now asks a small file on the internet whether there is a newer build — on launch, at most once a day — and offers to install it for you.</p>
+<ul>
+<li>Help → Check for Updates… does the same thing whenever you want it.</li>
+<li>The update window shows exactly these release notes before you decide.</li>
+<li>You can turn the automatic half off the first time it asks.</li>
+</ul>
+<h2>What that costs, and what it does not</h2>
+<p>One request for a public file, and nothing else. No account, no telemetry, no report of what you render — the same promise the rest of the app makes.</p>
+<ul>
+<li>The request says nothing about your Mac, you, or your audio.</li>
+<li>An update is only installed if it carries a signature made with DF Productions' key AND is notarized by Apple under the same identity as the copy you are running. Either check failing means it is refused, not warned about.</li>
+</ul>
+</div>
+]]></description>
+            <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.3-b5/DFP-TC-Burn-2.3-b5.zip" length="4535750" type="application/octet-stream" sparkle:edSignature="JO32U9WilMUWCYnLunMIuGXVCYu/8xyqK9STQSUsd2G9+GMdMcnKdf2X3OnFQBVt+VuqVr2imYkFu095OO8RDA=="/>
+        </item>
+    </channel>
+</rss>
