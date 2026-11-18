@@ -3,6 +3,46 @@
     <channel>
         <title>DFP TC Burn</title>
         <item>
+            <title>2.4</title>
+            <pubDate>Wed, 18 Nov 2026 12:55:50 -0600</pubDate>
+            <link>https://github.com/danefros/DFP-TCBurn-Releases</link>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>2.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<style>
+.tcburn-whatsnew { font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  color: #1A1A1A; margin: 0; padding: 4px 2px 12px; }
+.tcburn-whatsnew h1 { font-size: 15px; margin: 0 0 2px; color: #1F4E79; }
+.tcburn-whatsnew .version { font-size: 11px; color: #6B6B6B; margin: 0 0 14px; }
+.tcburn-whatsnew h2 { font-size: 13px; margin: 18px 0 6px; color: #1A1A1A;
+  border-bottom: 1px solid #DCDCDC; padding-bottom: 3px; }
+.tcburn-whatsnew p { margin: 0 0 10px; }
+.tcburn-whatsnew ul { margin: 0 0 10px; padding-left: 20px; }
+.tcburn-whatsnew li { margin: 0 0 7px; }
+</style>
+<div class="tcburn-whatsnew">
+<h1>It runs on Sonoma now — and on Intel Macs.</h1>
+<p class="version">DFP TC Burn 2.4</p>
+<h2>macOS 14 Sonoma and later</h2>
+<p>TC Burn used to require macOS 26, which ruled out almost every Mac actually in use. It now runs on macOS 14 Sonoma and anything newer.</p>
+<ul>
+<li>It also ships as a universal binary, so Intel Macs run it natively rather than not at all.</li>
+<li>Nothing about what it does has changed — same decoder, same renderer, same styles.</li>
+</ul>
+<h2>A crash can now be reported</h2>
+<p>An app that has crashed cannot file a bug about itself, which made the one failure most worth hearing about the only one that could never be sent.</p>
+<ul>
+<li>Help → Report a Bug… now finds the crash report macOS saved and offers to attach it. The option only appears when there is actually a crash to send.</li>
+<li>As before, the report is shown to you in full and nothing leaves your Mac until you send it.</li>
+</ul>
+</div>
+]]></description>
+            <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.4-b6/DFP-TC-Burn-2.4-b6.zip" length="5296183" type="application/octet-stream" sparkle:edSignature="yB16hDOQPMmiZ1sur+HIMLasQNG97O2SS50/7Rs1nuFKwStDflOBXQIIWuR8n12DaUqyVgWTJ0wki7K0g0lBDw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.4-b6/DFP%20TC%20Burn6-5.delta" sparkle:deltaFrom="5" length="690666" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="98Ep52QVnE8rksBoAehAp+SZ2sVlvcD1QoEUNcV28eBB56eX3n95a6kN5KOFtnmxH8bzDoKaejr9ZpXb9EygBw=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>2.3</title>
             <pubDate>Fri, 04 Sep 2026 10:33:32 -0700</pubDate>
             <link>https://github.com/danefros/DFP-TCBurn-Releases</link>
