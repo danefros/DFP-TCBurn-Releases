@@ -3,6 +3,49 @@
     <channel>
         <title>DFP TC Burn</title>
         <item>
+            <title>2.5</title>
+            <pubDate>Thu, 19 Nov 2026 15:58:56 -0800</pubDate>
+            <link>https://github.com/danefros/DFP-TCBurn-Releases</link>
+            <sparkle:version>7</sparkle:version>
+            <sparkle:shortVersionString>2.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<style>
+.tcburn-whatsnew { font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  color: #1A1A1A; margin: 0; padding: 4px 2px 12px; }
+.tcburn-whatsnew h1 { font-size: 15px; margin: 0 0 2px; color: #1F4E79; }
+.tcburn-whatsnew .version { font-size: 11px; color: #6B6B6B; margin: 0 0 14px; }
+.tcburn-whatsnew h2 { font-size: 13px; margin: 18px 0 6px; color: #1A1A1A;
+  border-bottom: 1px solid #DCDCDC; padding-bottom: 3px; }
+.tcburn-whatsnew p { margin: 0 0 10px; }
+.tcburn-whatsnew ul { margin: 0 0 10px; padding-left: 20px; }
+.tcburn-whatsnew li { margin: 0 0 7px; }
+</style>
+<div class="tcburn-whatsnew">
+<h1>It tells you when the timecode jumps.</h1>
+<p class="version">DFP TC Burn 2.5</p>
+<h2>Timecode breaks are flagged, with the times</h2>
+<p>If the timecode in a file jumps — two takes spliced together, a recorder restarted, a re-slate — the app now says so as soon as it reads the file, and tells you where. Until now the only way to catch it was to happen to be watching the right second of the finished burn-in.</p>
+<ul>
+<li>Each break is listed with how far into the file it is, the timecode either side of it, and how big the jump was. The time on the left is where to scrub to.</li>
+<li>It advises; it never blocks. A jump is often known and intended, and the render stays available either way.</li>
+<li>The burn-in itself carries a small amber line under the timecode — "(TC JUMP @ 04:50:31:13)" — so the warning travels with the video to whoever reviews it, not just with the app. Files with no jump render exactly as before.</li>
+<li>Watch folders flag it too: the row is tinted, the timecodes are listed in their own line, a count appears beside Rendered/Failed/Skipped, and it goes into the folder's log. That matters more there, because nobody is watching.</li>
+</ul>
+<h2>It only speaks up when it means something</h2>
+<p>The decoder misses the odd frame on almost every file, and a warning that fires on those would be noise you learn to ignore.</p>
+<ul>
+<li>A break is only reported when the timecode moved further than the audio between two frames can account for. A frame the decoder simply missed is not a break.</li>
+<li>A splice is rarely frame-aligned, so the frame straddling it decodes to nonsense. Breaks that close together are reported as the one edit they actually are, not as two.</li>
+</ul>
+</div>
+]]></description>
+            <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.5-b7/DFP-TC-Burn-2.5-b7.zip" length="5339659" type="application/octet-stream" sparkle:edSignature="nk6/USGA7Ki9LNR7xxRrSN5aMsMJNhPa4qqtbBB7hSksRh8GWjRlit1o8lYmAxqtLtX6+myWjI3H98rnLVX/AA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.5-b7/DFP-TC-Burn7-6.delta" sparkle:deltaFrom="6" length="516926" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="oeic+99ay5OXVi9vW7WaWAhcLmT06nX+4vDszV1fnd1qo89UUDKoqoCk8jzco9q1dg/eVDKd+AbeoJJi84VhBA=="/>
+                <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.5-b7/DFP-TC-Burn7-5.delta" sparkle:deltaFrom="5" length="807954" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="e8z/z4pJ35VZK52rcrnLmJY0Z3SpVZwA9rALoFLcR5iwDjUpMgNect36WbeJ6pdw9fpIX7TMnjuu7svXBFqoBQ=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>2.4</title>
             <pubDate>Wed, 18 Nov 2026 12:55:50 -0600</pubDate>
             <link>https://github.com/danefros/DFP-TCBurn-Releases</link>
