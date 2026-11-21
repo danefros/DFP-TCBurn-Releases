@@ -4,6 +4,85 @@
         <title>DFP TC Burn</title>
         <item>
             <title>2.6</title>
+            <pubDate>Fri, 20 Nov 2026 20:00:16 -0800</pubDate>
+            <link>https://github.com/danefros/DFP-TCBurn-Releases</link>
+            <sparkle:version>16</sparkle:version>
+            <sparkle:shortVersionString>2.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<style>
+.tcburn-whatsnew { font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  color: #1A1A1A; margin: 0; padding: 4px 2px 12px; }
+.tcburn-whatsnew h1 { font-size: 15px; margin: 0 0 2px; color: #1F4E79; }
+.tcburn-whatsnew .version { font-size: 11px; color: #6B6B6B; margin: 0 0 14px; }
+.tcburn-whatsnew h2 { font-size: 13px; margin: 18px 0 6px; color: #1A1A1A;
+  border-bottom: 1px solid #DCDCDC; padding-bottom: 3px; }
+.tcburn-whatsnew p { margin: 0 0 10px; }
+.tcburn-whatsnew ul { margin: 0 0 10px; padding-left: 20px; }
+.tcburn-whatsnew li { margin: 0 0 7px; }
+</style>
+<div class="tcburn-whatsnew">
+<h1>It finds the beat on its own now.</h1>
+<p class="version">DFP TC Burn 2.6</p>
+<h2>The warning tag is now yours to place</h2>
+<p>2.5 added a tag under the timecode when a file's timecode jumps. It sat where the app put it. From this release it is a style element in its own right, listed as Warning Tag, so it can be dragged, aligned, recoloured and resized like anything else.</p>
+<ul>
+<li>It starts out following the timecode, exactly where it has always been drawn — so every style you already have renders unchanged. Nothing moves until you move it.</li>
+<li>Drag it and it keeps the position it was already in, then stays where you put it. The geometry fields read as greyed while it is following, so you can see what will be drawn before you take it over.</li>
+<li>Colour can be changed without giving up the automatic placement, and Reset puts it back on auto.</li>
+<li>It is called Warning Tag, not Jump Tag, because the slot is general: a timecode jump is the only thing that raises one today, and anything added later will appear in the same place.</li>
+</ul>
+<h2>A tick box for whether it is burned in at all</h2>
+<p>The Output card has “Burn warning tag into picture”, ticked by default. Clear it and that render goes out without a tag.</p>
+<ul>
+<li>It affects the picture only. The alert in the window and the watch-folder log still report the jump, so clearing it cannot hide a jump from you — only from whoever receives the file, which is now your call rather than the app's.</li>
+<li>It is per render rather than saved into the style, so the next file starts with the tag on again.</li>
+<li>The thumbnail follows it, so what you see is what gets written.</li>
+</ul>
+<h2>A bars | beats readout that finds the tempo by itself</h2>
+<p>Tick one box and the app listens to the music, works out the tempo and the downbeat, and burns a bars and beats counter into the picture — 017|3, meaning bar 17 beat 3. Nothing to type, no musical knowledge needed.</p>
+<ul>
+<li>It analyses the program audio on a split-track file — music on one channel, timecode on the other — and takes well under a second.</li>
+<li>It tells you how sure it is beside the tempo — a percentage when the answer is clean, and what is wrong with it when it is not. That is part of the answer rather than a footnote: detection is good, not infallible, and a number shown without it would invite more trust than it has earned.</li>
+<li>If it is unsure it says so and still shows the count, because a tentative grid you can check beats no grid at all. If it finds nothing convincing it says that, instead of inventing a tempo.</li>
+<li>It counts on the audio clock, not the timecode, so a timecode jump in the file does not disturb the beats — the music carried on, and so does the count.</li>
+<li>Where the tempo moves across a track it works out how far the count will have slipped by the end, in frames, and tells you to check the last chorus. A beat played with feel in the middle costs nothing; the numbers being wrong when the track finishes is the thing worth knowing about.</li>
+<li>Set the time signature yourself for music in three or six, and bar one is worked out again for the meter you chose.</li>
+<li>It is a style element, Bars | Beats, so it can be placed, recoloured and sized like anything else — or switched off in a style that should never carry one.</li>
+</ul>
+<h2>And when it gets the beat wrong, one click fixes it</h2>
+<p>Detection is a proposal, not a verdict. Every commercial tool that does this gets it wrong sometimes and none of them pretend otherwise — what they offer is being one click from right. So does this.</p>
+<ul>
+<li>×2 and ÷2 for a count running at half or double the speed you want. The app will not make that call for itself: a pattern that leaves some beats empty looks exactly like counting at double speed, and only you can hear which it is.</li>
+<li>The detected tempo sits in a field you can simply type over, keeping the downbeat the app found.</li>
+<li>Nudge bar 1 moves the “1” onto another beat of the same bar. That is the common failure by a long way — where the tempo is right and the bar line is not — and it is one press rather than a switch to typing timecodes.</li>
+<li>Corrections belong to the file they were made on. Load another and they are cleared, so one track's fix is never silently applied to the next.</li>
+</ul>
+<h2>4K output</h2>
+<p>540p, 720p, 1080p and now 4K (3840×2160). 540p is still the default, because it is still the review size.</p>
+<ul>
+<li>One style renders identically at all four sizes — element sizes have always been a share of the frame rather than fixed pixels, which is why 4K needed no layout work.</li>
+<li>It costs about seven times a 540p render rather than the sixteen the pixel count suggests, because only the timecode is redrawn per frame.</li>
+<li>Picking 4K with ProRes now says what the file size will be, since 4K 4444 runs near 11 GB a minute. It is still allowed — just not a surprise.</li>
+</ul>
+<h2>One copy at a time</h2>
+<p>Launch the app when it is already open and the copy already running comes to the front, instead of a second one starting.</p>
+<ul>
+<li>Two copies share one set of styles, assets and working draft on disk, so the second to save would quietly overwrite the first one's edits.</li>
+<li>Two copies watching the same folder would both render the same dropped file to the same path, which is the failure that actually costs you something.</li>
+<li>If the copy already open is a different build, the app says so before bringing it forward rather than handing you back a version you were not expecting.</li>
+</ul>
+</div>
+]]></description>
+            <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.6-b16/DFP-TC-Burn-2.6-b16.zip" length="5655779" type="application/octet-stream" sparkle:edSignature="j6/gJEeUHqgNq5rtHwRQV3udLL6VrjbvjUw1DPMi5/bBia6fkZoruus794l4A9SmCegGIp/pNYJlQ7i1QIxODQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.6-b16/DFP-TC-Burn16-15.delta" sparkle:deltaFrom="15" length="134582" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="jB3at3ib2bwiunSSpgsdPjgQ9S3rletx7FhW9OvlX+ypgNFQ50aO44cq7WRu5b5Wlln4A2Rl3V5V1S0U3I1xAQ=="/>
+                <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.6-b16/DFP-TC-Burn16-7.delta" sparkle:deltaFrom="7" length="809278" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="lU7luZ3OVV6SxqZ8ajlFlDxuMtP/1AWDs8z+Ux188ocYr1TngFqJ7JoeIcXY4Y6JMF6nokpVxP8LSWVq9yv1Bg=="/>
+                <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.6-b16/DFP-TC-Burn16-6.delta" sparkle:deltaFrom="6" length="864862" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="MjWOdKTYP/AMm/BYrnCvf563SJ0VQ3wIAoZgdHVN/J4To0Ds7t7xnV8UTnFiZcBuHPfMqyiHz4DbceGVq5P+BQ=="/>
+                <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.6-b16/DFP-TC-Burn16-5.delta" sparkle:deltaFrom="5" length="1070490" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="eSlYb+NGAQOmTvsat87bd440qqrKTDLK7RZ9dOR2ptnVdgDijTHrcMZILzgiGPix8LndOjDNbNPyyVvdZrisCw=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>2.6</title>
             <pubDate>Fri, 20 Nov 2026 19:20:13 -0800</pubDate>
             <link>https://github.com/danefros/DFP-TCBurn-Releases</link>
             <sparkle:version>15</sparkle:version>
@@ -121,46 +200,6 @@
             <sparkle:deltas>
                 <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.5-b7/DFP-TC-Burn7-6.delta" sparkle:deltaFrom="6" length="516926" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="oeic+99ay5OXVi9vW7WaWAhcLmT06nX+4vDszV1fnd1qo89UUDKoqoCk8jzco9q1dg/eVDKd+AbeoJJi84VhBA=="/>
                 <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.5-b7/DFP-TC-Burn7-5.delta" sparkle:deltaFrom="5" length="807954" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="e8z/z4pJ35VZK52rcrnLmJY0Z3SpVZwA9rALoFLcR5iwDjUpMgNect36WbeJ6pdw9fpIX7TMnjuu7svXBFqoBQ=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>2.4</title>
-            <pubDate>Wed, 18 Nov 2026 12:55:50 -0600</pubDate>
-            <link>https://github.com/danefros/DFP-TCBurn-Releases</link>
-            <sparkle:version>6</sparkle:version>
-            <sparkle:shortVersionString>2.4</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[<style>
-.tcburn-whatsnew { font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  color: #1A1A1A; margin: 0; padding: 4px 2px 12px; }
-.tcburn-whatsnew h1 { font-size: 15px; margin: 0 0 2px; color: #1F4E79; }
-.tcburn-whatsnew .version { font-size: 11px; color: #6B6B6B; margin: 0 0 14px; }
-.tcburn-whatsnew h2 { font-size: 13px; margin: 18px 0 6px; color: #1A1A1A;
-  border-bottom: 1px solid #DCDCDC; padding-bottom: 3px; }
-.tcburn-whatsnew p { margin: 0 0 10px; }
-.tcburn-whatsnew ul { margin: 0 0 10px; padding-left: 20px; }
-.tcburn-whatsnew li { margin: 0 0 7px; }
-</style>
-<div class="tcburn-whatsnew">
-<h1>It runs on Sonoma now — and on Intel Macs.</h1>
-<p class="version">DFP TC Burn 2.4</p>
-<h2>macOS 14 Sonoma and later</h2>
-<p>TC Burn used to require macOS 26, which ruled out almost every Mac actually in use. It now runs on macOS 14 Sonoma and anything newer.</p>
-<ul>
-<li>It also ships as a universal binary, so Intel Macs run it natively rather than not at all.</li>
-<li>Nothing about what it does has changed — same decoder, same renderer, same styles.</li>
-</ul>
-<h2>A crash can now be reported</h2>
-<p>An app that has crashed cannot file a bug about itself, which made the one failure most worth hearing about the only one that could never be sent.</p>
-<ul>
-<li>Help → Report a Bug… now finds the crash report macOS saved and offers to attach it. The option only appears when there is actually a crash to send.</li>
-<li>As before, the report is shown to you in full and nothing leaves your Mac until you send it.</li>
-</ul>
-</div>
-]]></description>
-            <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.4-b6/DFP-TC-Burn-2.4-b6.zip" length="5296183" type="application/octet-stream" sparkle:edSignature="yB16hDOQPMmiZ1sur+HIMLasQNG97O2SS50/7Rs1nuFKwStDflOBXQIIWuR8n12DaUqyVgWTJ0wki7K0g0lBDw=="/>
-            <sparkle:deltas>
-                <enclosure url="https://github.com/danefros/DFP-TCBurn-Releases/releases/download/v2.4-b6/DFP-TC-Burn6-5.delta" sparkle:deltaFrom="5" length="690666" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="98Ep52QVnE8rksBoAehAp+SZ2sVlvcD1QoEUNcV28eBB56eX3n95a6kN5KOFtnmxH8bzDoKaejr9ZpXb9EygBw=="/>
             </sparkle:deltas>
         </item>
         <item>
